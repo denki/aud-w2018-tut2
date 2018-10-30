@@ -1,0 +1,48 @@
+#+title: Lösungen zum 3. Übungsblatt
+#+date: 2018-10-30
+#+email: tobias.denkinger@tu-dresden.de
+#+options: toc:nil
+
+* Lösungen zu Aufgabe 1 (AGS 2.2.24)
+** Teilaufgabe a
+
+#+begin_src elisp
+#+end_src
+
+** Teilaufgabe b
+
+  * Wort: aabababb
+
+| Wort     | Markenkeller |
+|          |          <r> |
+|----------+--------------|
+|          |              |
+
+* Lösungen zu Aufgabe 2 (AGS 2.2.22*)
+** Teilaufgabe a
+
+  * R = { S ::= (aA ∣ c),  A ::= [aSb] }
+
+** Teilaufgabe b
+
+* Lösungen zu Aufgabe 3 (AGS 2.2.48)
+** Teilaufgabe a
+
+** Teilaufgabe b
+
+#+begin_src elisp
+#+end_src
+
+** Teilaufgabe c
+
+* Lösung zu Aufgabe 4 (AGS 2.2.50)
+** Teilaufgabe a
+
+** Teilaufgabe b
+
+#+begin_src elisp
+⊥ = S⎛∅⎞
+    A⎝∅⎠
+#+end_src
+
+** Teilaufgabe c
