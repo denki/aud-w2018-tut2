@@ -2,47 +2,100 @@
 #+date: 2018-10-30
 #+email: tobias.denkinger@tu-dresden.de
 #+options: toc:nil
+#+HTML_HEAD_EXTRA: <style> .figure p {text-align: left;}</style>
+
+* Organisatorisches
+  * Die Mitschriften für Übungen 3–7 werden auf [[https://github.com/denki/aud-w2018-tut2]] veröffentlicht.
+  * Übungsverlegungen für Übungen 3–7 (steht auch online):
+| # | alter Termin   | neuer Termin              | Grund            |
+|   | <l>            | <l>                       | <l>              |
+|---+----------------+---------------------------+------------------|
+| 3 | 31.10. (heute) | *30.10., 2. DS, APB/3027* | Reformationstag  |
+| 4 | 07.11.         | 07.11., 1. DS, *APB/3027* | C-Programmierung |
+| 5 | 14.11.         | 14.11., 1. DS, *APB/3027* | C-Programmierung |
+| 6 | 21.11.         | *20.11., 2. DS, APB/3027* | Buß- und Bettag  |
+| 7 | 28.11.         | 28.11., 1. DS, *APB/3027* | C-Programmierung |
 
 * Lösungen zu Aufgabe 1 (AGS 2.2.24)
 ** Teilaufgabe a
 
 #+begin_src elisp
+L = {aⁿbᵐvaw ∣ n ≥ m ≥ 0, v, w ∈ Σ*, |v| = |w|}
+  = {aⁿbᵐ ∣ n ≥ m ≥ 0} ⋅ {vaw ∣ v, w ∈ Σ*, |v| = |w|}
+  = {aᵐaⁱbᵐ ∣ m, i ≥ 0} ⋅ {vaw ∣ v, w ∈ Σ*, |v| = |w|}
+    └────────┬────────┘   └────────────┬─────────────┘
+             A                         B
 #+end_src
+
+#+attr_html: :width 1000px
+[[./sol03-1a.png]]
 
 ** Teilaufgabe b
 
   * Wort: aabababb
+  * Man beachte die durchgestrichenen Vieren auf Zeilen 8 und 9 des Markenprotokolls
 
 | Wort     | Markenkeller |
 |          |          <r> |
 |----------+--------------|
-|          |              |
+| ε        |            1 |
+| a        |          3 1 |
+| aa       |        +3+ 1 |
+| aab      |          +1+ |
+| aab      |            2 |
+| aaba     |          4 2 |
+| aabab    |        4 4 2 |
+| aababa   |      +4+ 4 2 |
+| aababab  |        +4+ 2 |
+| aabababb |          +2+ |
+| aabababb |            ε |
 
 * Lösungen zu Aufgabe 2 (AGS 2.2.22*)
 ** Teilaufgabe a
 
   * R = { S ::= (aA ∣ c),  A ::= [aSb] }
+  * S ::= (aA ∣ c) “≡” (a[aSb] ∣ c) “≡” (a(aSb∣) ∣ c) “≡” “(aaSb ∣ a ∣ c)”
+  * L(ℰ) = {a²ⁿσbⁿ ∣ n ∈ ℕ, σ ∈ {a, c}}
+
+  * [α] “≡” (α∣)
 
 ** Teilaufgabe b
+
+#+attr_html: :width 500px
+[[./sol03-2b.png]]
 
 * Lösungen zu Aufgabe 3 (AGS 2.2.48)
 ** Teilaufgabe a
 
+  * V = { S, B }
+  * R = { S ::= aa{a}Baa{a},  B ::= (bbBbbb | aa{a}) }
+
 ** Teilaufgabe b
 
 #+begin_src elisp
+nächste Woche
 #+end_src
 
 ** Teilaufgabe c
 
-* Lösung zu Aufgabe 4 (AGS 2.2.50)
+/Hausaufgabe/
+
+* Lösungen zu Aufgabe 4 (AGS 2.2.50)
 ** Teilaufgabe a
 
+/Hausaufgabe/
+
 ** Teilaufgabe b
 
 #+begin_src elisp
-⊥ = S⎛∅⎞
-    A⎝∅⎠
+f: (V → 𝒫(Σ*)) → (V → 𝒫(Σ*))
+f: ρ ↦ S⎛⟦[aAb]⟧(ρ)  ⎞ = S⎛{a} ⋅ ρ(A) ⋅ {b} ∪ {ε} ⎞
+       A⎝⟦(Sc∣cS)⟧(ρ)⎠   A⎝ρ(S) ⋅ {c} ∪ {c} ⋅ ρ(S)⎠
+
+⊥ = S⎛∅⎞ ↦ ⎛{a} ⋅ ∅ ⋅ {b} ∪ {ε}⎞ = ⎛{ε}⎞ ↦ ⎛{ε}⎞ ↦ ⎛{ε, acb}⎞ ↦ ⎛{ε, acb}       ⎞ ↦ ⎛{ε, acb, aacbcb, acacbb}⎞
+    A⎝∅⎠   ⎝∅ ⋅ {c} ∪ {c} ⋅ ∅  ⎠   ⎝ ∅ ⎠   ⎝{c}⎠   ⎝{c}     ⎠   ⎝{c, acbc, cacb}⎠   ⎝{c, acbc, cacb}         ⎠
 #+end_src
 
 ** Teilaufgabe c
+
+/Hausaufgabe/
