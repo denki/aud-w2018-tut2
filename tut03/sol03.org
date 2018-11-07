@@ -73,7 +73,21 @@ L = {aⁿbᵐvaw ∣ n ≥ m ≥ 0, v, w ∈ Σ*, |v| = |w|}
 ** Teilaufgabe b
 
 #+begin_src elisp
-nächste Woche
+Sei W(ℰ, S) = ρ(S) = {aⁿwaⁿ ∣ n ≥ 0, w ∈ {ε, a}}.
+Zu zeigen: ⟦(aSa∣[b])⟧(ρ) = ρ(S).
+
+⟦(aSa∣[b])⟧(ρ)
+= ⟦aSa⟧(ρ) ∪ ⟦[b]⟧(ρ)
+= ⟦aSa⟧(ρ) ∪ ⟦b⟧(ρ) ∪ {ε}
+= ⟦a⟧(ρ) ⋅ ⟦Sa⟧(ρ) ∪ ⟦b⟧(ρ) ∪ {ε}
+= ⟦a⟧(ρ) ⋅ ρ(S) ⋅ ⟦a⟧(ρ) ∪ ⟦b⟧(ρ) ∪ {ε}
+= {a} ⋅ ρ(S) ⋅ {a} ∪ {b} ∪ {ε}
+= {awa ∣ w ∈ {aⁿwaⁿ ∣ n ≥ 0, w ∈ {ε, b}}} ∪ {b, ε}
+= {aaⁿwaⁿa ∣ n ≥ 0, w ∈ {ε, b}} ∪ {b, ε}
+= {aⁿwaⁿ ∣ n ≥ 1, w ∈ {ε, b}} ∪ {b, ε}
+= {aⁿwaⁿ ∣ n ≥ 1, w ∈ {ε, b}} ∪ {aⁿwaⁿ ∣ n = 0, w ∈ {ε, b}}
+= {aⁿwaⁿ ∣ n ≥ 0, w ∈ {ε, b}}
+= ρ(S)
 #+end_src
 
 ** Teilaufgabe c
