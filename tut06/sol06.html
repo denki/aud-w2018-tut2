@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-11-20 Di 11:58 -->
+<!-- 2018-11-28 Mi 09:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lösungen zum 6. Übungsblatt</title>
@@ -231,12 +231,12 @@ for the JavaScript code in this tag.
 <div id="content">
 <h1 class="title">Lösungen zum 6. Übungsblatt</h1>
 
-<div id="outline-container-orgbbab864" class="outline-2">
-<h2 id="orgbbab864"><span class="section-number-2">1</span> Lösungen zu Aufgabe 1 (AGS 4.25)</h2>
+<div id="outline-container-orge1e3d40" class="outline-2">
+<h2 id="orge1e3d40"><span class="section-number-2">1</span> Lösungen zu Aufgabe 1 (AGS 4.25)</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgdf5cd3d" class="outline-3">
-<h3 id="orgdf5cd3d"><span class="section-number-3">1.1</span> Teilaufgabe a</h3>
+<div id="outline-container-org6a4fc70" class="outline-3">
+<h3 id="org6a4fc70"><span class="section-number-3">1.1</span> Teilaufgabe a</h3>
 <div class="outline-text-3" id="text-1-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -287,8 +287,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org7baf82e" class="outline-3">
-<h3 id="org7baf82e"><span class="section-number-3">1.2</span> Teilaufgabe b</h3>
+<div id="outline-container-orgf831d87" class="outline-3">
+<h3 id="orgf831d87"><span class="section-number-3">1.2</span> Teilaufgabe b</h3>
 <div class="outline-text-3" id="text-1-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="border">
 
@@ -729,8 +729,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org402b759" class="outline-2">
-<h2 id="org402b759"><span class="section-number-2">2</span> Lösungen zu Aufgabe 2 (AGS 3.2.41*)</h2>
+<div id="outline-container-org914755c" class="outline-2">
+<h2 id="org914755c"><span class="section-number-2">2</span> Lösungen zu Aufgabe 2 (AGS 3.2.41*)</h2>
 <div class="outline-text-2" id="text-2">
 
 <div class="figure">
@@ -818,18 +818,84 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org38fc2da" class="outline-2">
-<h2 id="org38fc2da"><span class="section-number-2">3</span> Lösungen zu Aufgabe 3 (AGS 3.2.36)</h2>
+<div id="outline-container-org2cc5aa1" class="outline-2">
+<h2 id="org2cc5aa1"><span class="section-number-2">3</span> Lösungen zu Aufgabe 3 (AGS 3.2.36)</h2>
 <div class="outline-text-2" id="text-3">
-<p>
-<i>Hausaufgabe</i>
-</p>
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #268bd2;">#include</span> <span style="color: #2aa198;">&lt;</span><span style="color: #2aa198;">stdio.h</span><span style="color: #2aa198;">&gt;</span>
+<span style="color: #268bd2;">#include</span> <span style="color: #2aa198;">&lt;</span><span style="color: #2aa198;">stdlib.h</span><span style="color: #2aa198;">&gt;</span>
+
+<span style="color: #859900; font-weight: bold;">typedef</span> <span style="color: #859900; font-weight: bold;">struct</span> <span style="color: #b58900;">node</span> *<span style="color: #b58900;">tree</span>;
+<span style="color: #859900; font-weight: bold;">typedef</span> <span style="color: #859900; font-weight: bold;">struct</span> <span style="color: #b58900;">node</span> <span style="color: #2aa198;">{</span> <span style="color: #b58900;">int</span> <span style="color: #268bd2;">key</span>; <span style="color: #b58900;">tree</span> <span style="color: #268bd2;">left</span>, <span style="color: #268bd2;">right</span>; <span style="color: #2aa198;">}</span> <span style="color: #b58900;">node</span>;
+
+<span style="color: #b58900;">tree</span> <span style="color: #268bd2;">cons</span><span style="color: #2aa198;">(</span><span style="color: #b58900;">int</span> <span style="color: #268bd2;">v</span>, <span style="color: #b58900;">tree</span> <span style="color: #268bd2;">left</span>, <span style="color: #b58900;">tree</span> <span style="color: #268bd2;">right</span><span style="color: #2aa198;">)</span> <span style="color: #2aa198;">{</span>
+  <span style="color: #b58900;">tree</span> <span style="color: #268bd2;">t</span> = malloc<span style="color: #b58900;">(</span><span style="color: #859900; font-weight: bold;">sizeof</span><span style="color: #268bd2;">(</span>node<span style="color: #268bd2;">)</span><span style="color: #b58900;">)</span>;
+  t-&gt;key = v;
+  t-&gt;left = left;
+  t-&gt;right = right;
+
+  <span style="color: #859900; font-weight: bold;">return</span> t;
+<span style="color: #2aa198;">}</span>
+
+<span style="color: #b58900;">void</span> <span style="color: #268bd2;">print_tree</span><span style="color: #2aa198;">(</span><span style="color: #b58900;">tree</span> <span style="color: #268bd2;">t</span><span style="color: #2aa198;">)</span> <span style="color: #2aa198;">{</span>
+  <span style="color: #859900; font-weight: bold;">if</span> <span style="color: #b58900;">(</span><span style="color: #b58900; font-weight: bold;">!</span>t<span style="color: #b58900;">)</span> printf<span style="color: #b58900;">(</span><span style="color: #2aa198;">"NULL"</span><span style="color: #b58900;">)</span>;
+  <span style="color: #859900; font-weight: bold;">else</span> <span style="color: #859900; font-weight: bold;">if</span> <span style="color: #b58900;">(</span><span style="color: #b58900; font-weight: bold;">!</span>t-&gt;left &amp;&amp; <span style="color: #b58900; font-weight: bold;">!</span>t-&gt;right<span style="color: #b58900;">)</span>
+    printf<span style="color: #b58900;">(</span><span style="color: #2aa198;">"%d"</span>, t-&gt;key<span style="color: #b58900;">)</span>;
+  <span style="color: #859900; font-weight: bold;">else</span> <span style="color: #b58900;">{</span>
+    printf<span style="color: #268bd2;">(</span><span style="color: #2aa198;">"%d("</span>, t-&gt;key<span style="color: #268bd2;">)</span>;
+    print_tree<span style="color: #268bd2;">(</span>t-&gt;left<span style="color: #268bd2;">)</span>;
+    printf<span style="color: #268bd2;">(</span><span style="color: #2aa198;">", "</span><span style="color: #268bd2;">)</span>;
+    print_tree<span style="color: #268bd2;">(</span>t-&gt;right<span style="color: #268bd2;">)</span>;
+    printf<span style="color: #268bd2;">(</span><span style="color: #2aa198;">")"</span><span style="color: #268bd2;">)</span>;
+  <span style="color: #b58900;">}</span>
+<span style="color: #2aa198;">}</span>
+
+<span style="color: #b58900;">int</span> <span style="color: #268bd2;">count_value</span><span style="color: #2aa198;">(</span><span style="color: #b58900;">int</span> <span style="color: #268bd2;">v</span>, <span style="color: #b58900;">tree</span> <span style="color: #268bd2;">t</span><span style="color: #2aa198;">)</span> <span style="color: #2aa198;">{</span>
+  <span style="color: #859900; font-weight: bold;">if</span> <span style="color: #b58900;">(</span><span style="color: #b58900; font-weight: bold;">!</span>t<span style="color: #b58900;">)</span> <span style="color: #859900; font-weight: bold;">return</span> <span style="color: #6c71c4;">0</span>;
+  <span style="color: #859900; font-weight: bold;">return</span> <span style="color: #b58900;">(</span>t-&gt;key == v<span style="color: #b58900;">)</span> + count_value<span style="color: #b58900;">(</span>v, t-&gt;left<span style="color: #b58900;">)</span> + count_value<span style="color: #b58900;">(</span>v, t-&gt;right<span style="color: #b58900;">)</span>;
+<span style="color: #2aa198;">}</span>
+
+<span style="color: #b58900;">tree</span> <span style="color: #268bd2;">baz</span><span style="color: #2aa198;">(</span><span style="color: #b58900;">tree</span> <span style="color: #268bd2;">s</span>, <span style="color: #b58900;">tree</span> <span style="color: #268bd2;">t</span><span style="color: #2aa198;">)</span> <span style="color: #2aa198;">{</span>
+  <span style="color: #859900; font-weight: bold;">if</span> <span style="color: #b58900;">(</span><span style="color: #b58900; font-weight: bold;">!</span>s<span style="color: #b58900;">)</span> <span style="color: #859900; font-weight: bold;">return</span> <span style="color: #268bd2; font-weight: bold;">NULL</span>;
+
+  <span style="color: #859900; font-weight: bold;">return</span> cons<span style="color: #b58900;">(</span>count_value<span style="color: #268bd2;">(</span>s-&gt;key, t<span style="color: #268bd2;">)</span>,
+              baz<span style="color: #268bd2;">(</span>s-&gt;left, t<span style="color: #268bd2;">)</span>,
+              baz<span style="color: #268bd2;">(</span>s-&gt;right, t<span style="color: #268bd2;">)</span><span style="color: #b58900;">)</span>;
+<span style="color: #2aa198;">}</span>
+
+<span style="color: #b58900;">int</span> <span style="color: #268bd2;">leafprod</span><span style="color: #2aa198;">(</span><span style="color: #b58900;">tree</span> <span style="color: #268bd2;">t</span><span style="color: #2aa198;">)</span> <span style="color: #2aa198;">{</span>
+  <span style="color: #859900; font-weight: bold;">if</span> <span style="color: #b58900;">(</span><span style="color: #b58900; font-weight: bold;">!</span>t<span style="color: #b58900;">)</span> <span style="color: #859900; font-weight: bold;">return</span> <span style="color: #6c71c4;">1</span>;
+  <span style="color: #859900; font-weight: bold;">if</span> <span style="color: #b58900;">(</span><span style="color: #b58900; font-weight: bold;">!</span>t-&gt;left &amp;&amp; <span style="color: #b58900; font-weight: bold;">!</span>t-&gt;right<span style="color: #b58900;">)</span> <span style="color: #859900; font-weight: bold;">return</span> t-&gt;key;
+  <span style="color: #859900; font-weight: bold;">return</span> leafprod<span style="color: #b58900;">(</span>t-&gt;left<span style="color: #b58900;">)</span> * leafprod<span style="color: #b58900;">(</span>t-&gt;right<span style="color: #b58900;">)</span>;
+<span style="color: #2aa198;">}</span>
+
+<span style="color: #b58900;">int</span> <span style="color: #268bd2;">main</span><span style="color: #2aa198;">()</span> <span style="color: #2aa198;">{</span>
+  <span style="color: #b58900;">tree</span> <span style="color: #268bd2;">s</span> = cons<span style="color: #b58900;">(</span><span style="color: #6c71c4;">2</span>,
+                cons<span style="color: #268bd2;">(</span><span style="color: #6c71c4;">3</span>,
+                     cons<span style="color: #6c71c4;">(</span><span style="color: #6c71c4;">2</span>, <span style="color: #268bd2; font-weight: bold;">NULL</span>, <span style="color: #268bd2; font-weight: bold;">NULL</span><span style="color: #6c71c4;">)</span>,
+                     cons<span style="color: #6c71c4;">(</span><span style="color: #6c71c4;">4</span>, <span style="color: #268bd2; font-weight: bold;">NULL</span>, <span style="color: #268bd2; font-weight: bold;">NULL</span><span style="color: #6c71c4;">)</span>
+                     <span style="color: #268bd2;">)</span>,
+                cons<span style="color: #268bd2;">(</span><span style="color: #6c71c4;">1</span>, <span style="color: #268bd2; font-weight: bold;">NULL</span>, <span style="color: #268bd2; font-weight: bold;">NULL</span><span style="color: #268bd2;">)</span>
+                <span style="color: #b58900;">)</span>;
+  <span style="color: #b58900;">tree</span> <span style="color: #268bd2;">t</span> = cons<span style="color: #b58900;">(</span><span style="color: #6c71c4;">2</span>,
+                cons<span style="color: #268bd2;">(</span><span style="color: #6c71c4;">2</span>, <span style="color: #268bd2; font-weight: bold;">NULL</span>, <span style="color: #268bd2; font-weight: bold;">NULL</span><span style="color: #268bd2;">)</span>,
+                cons<span style="color: #268bd2;">(</span><span style="color: #6c71c4;">3</span>, <span style="color: #268bd2; font-weight: bold;">NULL</span>, <span style="color: #268bd2; font-weight: bold;">NULL</span><span style="color: #268bd2;">)</span>
+                <span style="color: #b58900;">)</span>;
+
+  print_tree<span style="color: #b58900;">(</span>s<span style="color: #b58900;">)</span>; printf<span style="color: #b58900;">(</span><span style="color: #2aa198;">"\n"</span><span style="color: #b58900;">)</span>;
+  printf<span style="color: #b58900;">(</span><span style="color: #2aa198;">"count_value(2, t) = %d\n"</span>, count_value<span style="color: #268bd2;">(</span><span style="color: #6c71c4;">2</span>, t<span style="color: #268bd2;">)</span><span style="color: #b58900;">)</span>;
+  print_tree<span style="color: #b58900;">(</span>baz<span style="color: #268bd2;">(</span>s, t<span style="color: #268bd2;">)</span><span style="color: #b58900;">)</span>; printf<span style="color: #b58900;">(</span><span style="color: #2aa198;">"\n"</span><span style="color: #b58900;">)</span>;
+  printf<span style="color: #b58900;">(</span><span style="color: #2aa198;">"leafprod(s) = %d\n"</span>, leafprod<span style="color: #268bd2;">(</span>s<span style="color: #268bd2;">)</span><span style="color: #b58900;">)</span>;
+  <span style="color: #859900; font-weight: bold;">return</span> <span style="color: #6c71c4;">0</span>;
+<span style="color: #2aa198;">}</span>
+</pre>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2018-11-19</p>
-<p class="date">Created: 2018-11-20 Di 11:58</p>
+<p class="date">Created: 2018-11-28 Mi 09:26</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

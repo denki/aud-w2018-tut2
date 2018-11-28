@@ -64,5 +64,5 @@
 
 * Lösungen zu Aufgabe 3 (AGS 3.2.36)
 
-/Hausaufgabe/
+#+include: "sol06-3.c" src c
 
