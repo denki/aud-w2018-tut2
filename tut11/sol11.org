@@ -1,0 +1,44 @@
+#+title: Lösungen zum 11. Übungsblatt
+#+date: 2019-01-09
+#+email: tobias.denkinger@tu-dresden.de
+#+options: toc:nil
+#+HTML_HEAD_EXTRA: <style> .figure p {text-align: left;}</style>
+
+* Lösungen zu Aufgabe 1 (AGS 9.2.12)
+** Teilaufgabe a
+#+attr_html: :width 600px
+[[./sol11-1a.png]]
+
+** Teilaufgabe b
+#+attr_html: :width 600px
+[[./sol11-1b.png]]
+
+** Teilaufgabe c (aus der anderen Übung)
+  * DFS: (n - 1)!
+  * BFS: 1
+
+* Lösungen zu Aufgabe 2 (AGS 9.5.12)
+** Teilaufgabe a
+#+attr_html: :width 600px
+[[./sol11-2a.png]]
+
+** Teilaufgabe b (aus der anderen Übung)
+4
+
+* Lösungen zu Aufgabe 3 (AGS 9.3.4)
+/siehe Tafel/
+
+* Lösungen zu Aufgabe 4 (AGS 9.3.6)
+/Hausaufgabe/
+
+** Teilaufgabe a (aus anderer Übung)
+#+begin_src elisp
+        ⎛0  6  3  6 12⎞
+        ⎜4  0  2  5  6⎟
+D_G^3 = ⎜2  3  0  3  9⎟
+        ⎜∞  ∞  ∞  0  ∞⎟
+        ⎝9 10  7  4  0⎠
+#+end_src
+
+** Teilaufgabe b (aus anderer Übung)
+(1,2,7), (2,1,7), (1,3,3)
